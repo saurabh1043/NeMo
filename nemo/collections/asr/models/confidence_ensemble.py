@@ -301,7 +301,7 @@ class ConfidenceEnsembleModel(ModelPT):
         for model_idx in range(self.num_models):
             model = getattr(self, f"model{model_idx}")
             transcriptions = model.transcribe(
-                paths2audio_files=paths2audio_files,
+                paths2audio_files,
                 batch_size=batch_size,
                 return_hypotheses=return_hypotheses,
                 num_workers=num_workers,
